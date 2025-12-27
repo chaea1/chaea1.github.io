@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../chinahousesite"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "personal website"
+	}
+}

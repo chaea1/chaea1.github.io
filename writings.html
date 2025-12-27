@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  const writingGrid = document.querySelector(".writing-grid");
+
+  writingGrid.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      writingGrid.scrollLeft += e.deltaY;
+    }
+  }, { passive: false })
+</script>
+
+<body class="page-writing">
+ <div class="custom-cursor"></div>
+  <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+        <a href="abouts.html" class="top-btn about-link">About Me</a>
+        <a href="sidequests.html" class="top-btn about-link">Side quests</a>
+        
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- BANNER -->
+<section class="writing-banner"> 
+    <h4>writings</h4> 
+    <p class="writing-subtitle">My writing centers on science, technology, and public health, combining academic research with critical analysis. Through these pieces, I aim to communicate complex ideas clearly while examining their broader impacts on society, policy, and human well-being.</p> 
+</section>
+  <!-- DIVIDER (your “white bar” idea) -->
+  <div class="section-divider"></div>
+
+  <!-- WRITING GRID -->
+  <main class="writing-wrap">
+
+    <section class="writing-grid">
+
+      <!-- Card 1 
+      <a class="writing-card about-link top-btn" href="writing-post-1.html">
+        <div class="writing-card-top">
+          <span class="writing-tag">reflection</span>
+          <span class="writing-date">Dec 2025</span>
+        </div>
+
+        <h3 class="writing-title">What I learned building a restaurant website</h3>
+        <p class="writing-desc">
+          Bridging cuisine and people through a clean UX, responsive layout, and accessible UI patterns.
+        </p>
+
+        <div class="writing-arrow">↗</div>
+      </a>
+    -->
+      <!-- Card 2 -->
+      <a class="writing-card about-link top-btn science"  href="writing-post-2.html">
+        <div class="writing-card-top">
+          <span class="writing-tag">Scientific Overview / Biology</span>
+          <span class="writing-date">July 2025</span>
+        </div>
+
+        <h3 class="writing-title"> Understanding Wilson’s Disease: A Genetic Disorder of Copper Metabolism</h3>
+        <p class="writing-desc">
+          A scientific overview of Wilson’s disease, examining its genetic basis, diagnostic methods, treatment options, and emerging gene therapy research.
+        </p>
+
+        <div class="writing-arrow">↗</div>
+      </a>
+            <!-- Card 3-->
+      <a class="writing-card about-link top-btn research"  href="writing-post-4.html">
+        <div class="writing-card-top">
+          <span class="writing-tag">research</span>
+          <span class="writing-date">April 2025</span>
+        </div>
+
+        <h3 class="writing-title">Despite Limitations: How AI Transforms Early Detection of Alzheimer’s Disease</h3>
+        <p class="writing-desc">
+           An academic research essay examining how artificial intelligence improves early detection of Alzheimer’s disease despite limitations in data access and explainability.
+</p>
+        </p>
+
+        <div class="writing-arrow">↗</div>
+      </a>
+
+
+      <!-- Card 3 -->
+      <a class="writing-card about-link top-btn research" href="writing-post-3.html">
+        <div class="writing-card-top">
+          <span class="writing-tag">Proposal</span>
+          <span class="writing-date">March 2025</span>
+        </div>
+
+        <h3 class="writing-title">The advancement of AI in early detection for Alzheimer’s Disease
+</h3>
+        <p class="writing-desc">
+         A research proposal examining how artificial intelligence improves early detection of Alzheimer’s disease through neuroimaging, biomarkers, and explainable models while addressing current limitations.
+        </p>
+
+        <div class="writing-arrow">↗</div>
+      </a>
+      
+            <!-- rhetorical analysis -->
+      <a class="writing-card about-link top-btn misc" href="writing-post-5.html">
+        <div class="writing-card-top">
+          <span class="writing-tag">Rhetorical Analysis</span>
+          <span class="writing-date">Feb 2025</span>
+        </div>
+
+        <h3 class="writing-title">Comparative Source Analysis on the impacts of leaving the World Health Organization
+</h3>
+        <p class="writing-desc">
+        A comparative analysis of journalistic and expert perspectives on the potential consequences of U.S. withdrawal from the World Health Organization, focusing on how rhetorical strategies shape public understanding of health policy.
+        </p>
+
+        <div class="writing-arrow">↗</div>
+      </a>
+      
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+ <script src="script.js" defer></script>
+  <div id="page-transition"></div>
+  <div id="about-transition"></div>
+</body>
+</html>

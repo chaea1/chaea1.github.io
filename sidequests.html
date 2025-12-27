@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Quests — Rebecca Law</title>
+
+  <!-- Existing site CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       SINGLE TOP BAR (ONLY NAV)
+  ========================== -->
+   <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+        <a href="abouts.html" class="top-btn about-link">About Me</a>
+        <a href="sidequests.html" class="top-btn about-link">Side quests</a>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Page Transition Overlay -->
+  <div id="page-transition"></div>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+  <main id="content" class="editorial-layout">
+
+    <!-- Masthead -->
+    <header class="editorial-header">
+      <h1 class="editorial-title">
+        side quests<span class="typed-caret">|</span>
+      </h1>
+
+  <div class="sidequest-ticker">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span>VIDEO EDITING</span>
+        <span>•</span>
+        <span>VIDEOGRAPHY</span>
+        <span>•</span>
+        <span>GEL-X EXTENSIONS</span>
+        <span>•</span>
+        <span>READING</span>
+        <span>•</span>
+        <span>WEB DESIGN</span>
+        <span>•</span>
+        <span>CREATIVE CODING</span>
+        <span>•</span>
+        <span>TECH WRITING</span>
+        <span>•</span>
+      </div>
+
+      <!-- duplicate for seamless loop -->
+      <div class="ticker-content" aria-hidden="true">
+        <span>VIDEO EDITING</span>
+        <span>•</span>
+        <span>VIDEOGRAPHY</span>
+        <span>•</span>
+        <span>GEL-X EXTENSIONS</span>
+        <span>•</span>
+        <span>READING</span>
+        <span>•</span>
+        <span>WEB DESIGN</span>
+        <span>•</span>
+        <span>CREATIVE CODING</span>
+        <span>•</span>
+        <span>TECH WRITING</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+  <div class="editorial-subtitle2">
+    <p>Side quests I take on outside of technical work — creative, expressive, and just for fun.</p>
+  </div>
+
+    <!-- =========================
+         FEATURE ROW
+    ========================== -->
+    <section class="editorial-feature">
+
+      <div class="feature-text">
+        <span class="feature-kicker">Featured</span>
+        <h2>Engineering Through Story</h2>
+        <p>
+          I integrate and video editing into my technical projects
+          to make complex ideas clearer, more engaging, and more memorable.
+          Strong visuals and narrative structure turn functional work into
+          communication that resonates.
+        </p>
+      </div>
+
+      <div class="feature-media">
+        <iframe
+          src="https://www.youtube.com/embed/HtCPGKL1m2g"
+          title="Storytelling Video"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+        <p class="video-caption">
+          Watch how Marian and friends troubleshoot a motorized car circuit in a robotics lab!
+        </p>
+      </div>
+
+    </section>
+    <!-- =========================
+         WIDE TWO-COLUMN SECTION
+    ========================== -->
+    <div class="section-divider"></div>
+    <section class="editorial-columns">
+
+      <!-- LEFT: JOURNALISM -->
+      <section class="editorial-main">
+        <span class="feature-kicker">Broadcast & Journalism</span>
+
+        <article class="editorial-item">
+          <h4>Sustainability Spotlight</h4>
+          <p>
+          On-camera reporting refined through editing for clarity, accuracy, and visual flow. This video was created as part of a social media campaign for CompostTeacher, a business developed in an entrepreneurship class, and serves as an educational feature on composting.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/6TitZs7cPFg?si=Pb-PXfDhKwqFW2e2"
+            title="Broadcast Journalism Clip"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </article>
+
+        <article class="editorial-item">
+          <h4>Broadcast News Segment</h4>
+          <p>
+           A TV news segment on the Chicago Bears’ proposed move to Arlington Heights, edited in Adobe Premiere Pro. The piece combines interviews and B-roll to reflect mixed community perspectives and was recognized as IHSA 2022 Sectional Champion.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/d74QJgmrj-c?si=Eghjha4tdrJCsu9q"
+            title="Feature Journalism Clip"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </article>
+      </section>
+
+      <!-- RIGHT: VIDEO + AWARDS -->
+      <aside class="editorial-side">
+
+        <h3 class="section-title"> Tools</h3>
+        <p>
+         Adobe Premiere Pro, ibis Paint X, Canva, Canon T6i EOS Rebel DSLR 
+        </p>
+
+        <h3 class="section-title">awards & competitions</h3>
+        <ul class="awards-list">
+            <li>
+            <strong>Illinois Highschool Association - Journalism</strong><br>
+            TV News Sectional Champion (2022-2023)
+          </li>
+          <li>
+            <strong>Southwest Prairie Conference (SPC) Journalism Competition </strong><br>
+            2nd Place - Video News (2022-2023)
+          </li>
+          
+        </ul>
+
+      </aside>
+
+    </section>
+
+  </main>
+      <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+ <script src="script.js" defer></script>
+  <div id="page-transition"></div>
+  <div id="about-transition"></div>
+</body>
+</html>

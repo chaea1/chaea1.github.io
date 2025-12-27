@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca Law</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Custom smooth cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- =========================
+       Loader / Intro
+  ========================== -->
+  <div id="loader">
+    <div class="dot"></div>
+
+    <div id="intro-text">
+      <span id="greeting"></span>
+      <span id="first-name"></span>
+      <span id="last-name"></span>
+      <span id="caret"></span>
+    </div>
+    
+  </div>
+
+  <!-- =========================
+       Main Site Content
+  ========================== -->
+  <div id="content" class="is-hidden">
+    <!-- NAV -->
+      <div class="top-bar">
+      <div class="top-bar-inner">
+        <a href="index.html" class="site-name">Rebecca Law ✿ </a>
+
+        <div class="top-buttons">
+          <a href="index.html#projects" class="top-btn">Projects</a>
+          <a href="writings.html" class="top-btn about-link">Writings</a>
+          <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+          <a href="abouts.html" class="top-btn about-link">About Me</a>
+          <a href="sidequests.html" class="top-btn about-link">Side quests</a>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <header>
+  
+    
+
+      <div class="flex-container">
+
+        <div class="float-in-text">
+          <span class="word1">Hi! </span>
+          <span class="word2">I'm</span>
+          <span class="word3">Rebecca.</span>
+          <span class="word4"><span class="flower">🌸</span></span>
+        </div>
+
+        <div class="text-left">
+          <h1>Building creative systems connecting people with technology.</h1>
+          </div>
+
+        <div class="text-right">
+          <p>I’ve come to love robotics and human-centered engineering, designing systems that bridge hardware, software, and user interaction. 
+            I also enjoy working in web development to explore how people use 
+            and experience technology today. This website is dedicated to archive my favorite personal projects and writings.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+         Projects Section
+    ========================== -->
+<div class="section-divider2"></div>
+
+    <section id="projects" class="section3 reveal-on-scroll">
+
+  <!-- TITLE ROW (standalone) -->
+  <h2 class="projects-title"> personal projects</h2>
+
+  <!-- PROJECT GRID -->
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <a href="sense-and-avoid.html" class="project-link">
+      <div class="project-card">
+        <img src="images/project1.png" alt="">
+         <div class="project-overlay">
+            <span class="project-title">Sense-and-Avoid Rover</span>
+          </div>
+      </div>
+    </a>
+
+    <!-- PROJECT 2 -->
+    <a href="chinahousesite.html" class="project-link">
+      <div class="project-card">
+        <img src="images/homepageCHW.png" alt="">
+                <div class="project-overlay">
+                    <span class="project-title">ChinaHouse.Com</span>
+                  </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+
+  <!-- Scripts -->
+   <script src="script.js" defer></script>
+<div id="page-transition"></div>
+  <div id="about-transition"></div>
+
+</body>
+</html>

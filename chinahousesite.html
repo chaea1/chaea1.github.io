@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChinaHouse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="custom-cursor"></div>
+       <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+        <a href="abouts.html" class="top-btn about-link">About Me</a>
+        <a href="sidequests.html" class="top-btn about-link">Side quests</a>
+      </div>
+    </div>
+  </div>
+
+
+<main class="project-page">
+
+  <!-- OVERVIEW ROW -->
+ <section class="overview-section">
+  <!-- LEFT: TEXT -->
+  <div class="overview-text">
+    <h2>Overview</h2>
+
+    <!-- STATUS -->
+    <div class="project-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Status: Work in Progress</span>
+    </div>
+
+    <p>
+      In today’s digital world, a website often serves as the first point of
+      connection between a restaurant and its customers. This project explores
+      how thoughtful UI and accessibility can connect users to Chinese cuisine
+      through a clean, intuitive experience.
+    </p>
+
+    <!-- TAGS -->
+    <div class="overview-tags">
+      <span class="tag tag-ui">UI Design</span>
+      <span class="tag tag-accessibility">Accessibility</span>
+      <span class="tag tag-html">HTML</span>
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-js">JavaScript</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: IMAGES -->
+  <div class="overview-images">
+    <img src="images/chinahouseext.png" class="project-image image-fade" alt="">
+    <img src="images/homepageCHW.png" class="project-image image-fade" alt="">
+    <img src="images/chinesefood.png" class="project-image image-fade" alt="">
+  </div>
+</section>
+
+
+</main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+ <script src="script.js" defer></script>
+  <div id="page-transition"></div>
+  <div id="about-transition"></div>
+</body>
+</html>

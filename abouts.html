@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Rebecca Law</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+ <div class="custom-cursor"></div>
+  <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+        <a href="abouts.html" class="top-btn about-link">About Me</a>
+        <a href="sidequests.html" class="top-btn about-link">Side Quests</a>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <main class="about-page">
+
+    <!-- ABOUT LAYOUT -->
+    <section class="about-hero">
+      <div class="about-layout">
+
+        <!-- TEXT COLUMN -->
+        <div class="about-text">
+          <h1 class="about-title">about me</h1>
+          <p class="about-lede">
+            Rebecca Law is an electrical engineering student at the University of Illinois
+            Urbana-Champaign with a strong interest in robotics and human-centered engineering.
+            While robotics is the core of her work, she enjoys approaching problems from multiple
+            disciplines, designing systems that span hardware, software, and user interaction.
+          </p>
+
+            <p class="about-lede">
+              Her projects include AI and machine learning–based detection systems, bioengineering-inspired
+              robotic systems such as a robotic arm, and web-based interactive technologies. She values
+              versatility in engineering and is motivated by projects where technical depth, adaptability,
+              and thoughtful user experience come together.
+              Outside of engineering, she enjoys reading, running, and video editing as a creative outlet beyond technical work.
+            </p>
+
+            <a href="documents/REBECCALAWRESUME.pdf" target="_blank" class="resume-btn">View resume ✿ </a>
+            <a href="mailto:rlaw7@illinois.edu" class="resume-btn"> Get in touch ✿ </a>
+          <section class="about-block">
+            <h2 class="about-subtitle">currently
+                <span class="flower">🌸</span>
+            </h2>
+            <ul class="about-list">
+              <li>Robotics & embedded systems</li>
+              <li>Interactive web development</li>
+              <li>Reading Throne of Glass by Sarah J. Mass</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- IMAGE COLUMN -->
+        <img
+          src="images/aboutme.PNG"
+          alt="Portrait of Rebecca Law"
+          class="about-hero-image"/>
+        
+
+      </div>
+    </section>
+
+
+  </main>
+    <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+   <script src="script.js" defer></script>
+    <div id="page-transition"></div>
+  <div id="about-transition"></div>
+
+</body>
+</html>

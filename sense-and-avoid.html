@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sense-and-Avoid Rover</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="custom-cursor"></div>
+  <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="https://www.linkedin.com/in/rereiia" target="_blank" class="top-btn">LinkedIn</a>
+        <a href="abouts.html" class="top-btn about-link">About Me</a>
+        <a href="sidequests.html" class="top-btn about-link">Side quests</a>
+        
+      </div>
+    </div>
+  </div>
+
+<main class="project-page">
+  
+
+  <!-- =========================
+       HERO IMAGES
+  ========================== -->
+  <section class="project-hero">
+    <img src="images/project1.png" class="project-image2 image-fade" alt="">
+    <img src="images/project12.png" class="project-image2 image-fade" alt="">
+    <img src="images/project13.png" class="project-image2 image-fade" alt="">
+  </section>
+
+  <!-- =========================
+       OVERVIEW
+  ========================== -->
+
+
+  <section class="project-section">
+
+     <div class="project-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Status: Work in Progress</span>
+    </div>
+    <h2>Overview</h2>
+    <p>
+    Ultrasonic waves are a powerful and accurate sensing method, making them suitable for object detection in robotics. I built a Sense and 
+    Detect Rover using an HC-SR04 ultrasonic sensor, which emits ultrasonic 
+    sound waves at approximately 40 kHz, a frequency beyond human hearing. 
+    When these waves encounter an obstacle, they reflect back to the sensor,
+    enabling distance measurement through time-of-flight.
+    </p>
+
+      <div class="overview-tags">
+      <span class="tag tag-ui">Robotics</span>
+      <span class="tag tag-accessibility">Ultrasonic Sensing</span>
+      <span class="tag tag-html">Obstacle Detection</span>
+      <span class="tag tag-css">Arduino</span>
+      <span class="tag tag-js">EmbeddedSystems</span>
+    </div>
+
+  </section>
+
+  </div>
+
+  <!-- =========================
+       PURPOSE
+  ========================== -->
+  <section class="project-section">
+    <h2>Learnings</h2>
+    <p>
+      Through this project, I am learning how reflected ultrasonic signals can be 
+      converted into electrical signals and processed to calculate distance. By measuring 
+      the time delay between transmission and reception, the rover determines the proximity
+       of nearby objects and makes real-time navigation decisions, such as avoiding 
+       obstacles while moving through its environment.
+    </p>
+  </section>
+
+  <!-- =========================
+       SOLUTION
+  ========================== -->
+
+  <div class="row">
+  <section class="block">
+    <h2>Design Process</h2>
+    <ul>
+      <li>Ultrasonic distance sensing for obstacle detection</li>
+      <li>Microcontroller-based control loop</li>
+      <li>Reactive path planning logic</li>
+    </ul>
+  </section>
+
+  <!-- =========================
+       RECIPE
+  ========================== -->
+   <section class="about-block">
+      <h2 class="about-subtitle">Main Components</h2>
+      <ul class="about-list">
+        <li>Arduino Board</li>
+        <li>Motor Shield</li>
+        <li>HC-SR04 Ultrasonic Sensor</li>
+        <li>SG90 Micro Servo</li>
+      </ul>
+</section>
+</div>
+
+  <!-- =========================
+       LEARNINGS
+  ========================== -->
+  <section class="project-section">
+    <h2>Results</h2>
+    <p>
+     In Progress.
+    </p>
+  </section>
+
+</main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Rebecca Law</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+ <script src="script.js" defer></script>
+  <div id="page-transition"></div>
+  <div id="about-transition"></div>
+</body>
+</html>
