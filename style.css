@@ -231,8 +231,26 @@ header img {
 
 .top-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.15);
   opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .top-btn:hover {
+    transform: none;
+    box-shadow: 0 28px 30px rgba(0, 0, 0, 0.12);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    align-items: center;      /* ⬅ prevents vertical stretch */
+  }
+
+  .top-btn {
+    align-self: center;       /* extra safety */
+    width: auto;              /* do NOT stretch full width */
+  }
 }
 
 
@@ -1647,5 +1665,94 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   .ticker-content {
     animation: none;
+  }
+}
+
+/* =========================================================
+   MOBILE SCALING FIX (NO DESKTOP CHANGES)
+========================================================= */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Global text scaling */
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 2.8rem; }
+  h3 { font-size: 2.1rem; }
+  h4 { font-size: 2.4rem; }
+  h5 { font-size: 2.2rem; }
+  p  { font-size: 1rem; }
+
+  /* Header / hero text grid */
+  .text-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .text-left h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+  }
+
+  /* Floating intro text */
+  .float-in-text span {
+    font-size: 2.8rem;
+    margin-right: 0.5rem;
+  }
+
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Overview section */
+  .overview-section {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .overview-text,
+  .overview-images {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .overview-text h1 {
+    font-size: 2.6rem;
+  }
+
+  /* Writing cards (horizontal scroll stays clean) */
+  .writing-card {
+    min-width: 280px;
+  }
+
+  /* Editorial layouts */
+  .editorial-feature,
+  .editorial-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Top bar buttons (centered, no overflow) */
+  .top-buttons {
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 12px;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Hide name on small screens */
+@media (max-width: 600px) {
+  .site-name {
+    display: none;
   }
 }

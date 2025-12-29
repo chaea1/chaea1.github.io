@@ -262,5 +262,25 @@
   window.addEventListener('load', () => {
     if (aboutTransition) aboutTransition.classList.remove('active');
   });
+  
+  /* =========================
+   Mobile + desktop tap / click skip
+   ========================= */
+function skipIntroOnInteraction() {
+  if (introFinished) return;
+  finishIntroInstantly();
+}
+
+if (loader) {
+  // Desktop click
+  loader.addEventListener('click', skipIntroOnInteraction);
+
+  // Mobile tap (fires immediately, no delay)
+  loader.addEventListener('touchstart', skipIntroOnInteraction, {
+    passive: true
+  });
+}
+
 
 })();
+
