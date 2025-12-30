@@ -395,6 +395,29 @@ body.is-loading {
 }
 
 
+@media (max-width: 768px) {
+  #intro-text {
+    white-space: nowrap;     /* stay on one line */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem); /* auto scale */
+  }
+}
+@media (max-width: 480px) {
+  #intro-text {
+    transform: scale(0.92);
+    transform-origin: center;
+  }
+}
+@media (max-width: 768px) {
+  #greeting,
+  #first-name,
+  #last-name,
+  #caret {
+    white-space: nowrap;
+  }
+}
 
 #loader.expand #intro-text {
   opacity: 1;
