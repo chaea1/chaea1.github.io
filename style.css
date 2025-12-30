@@ -767,10 +767,19 @@ html { scroll-behavior: smooth; }
   display: flex;
   gap: 1.25rem;
   margin-top: 2.0rem;
-  flex-wrap: nowrap;        /* 🔒 forces one line */
+  flex-wrap: nowrap; 
+         /* 🔒 forces one line */
   align-items: center;
 
+
 }
+@media (max-width: 768px) {
+  .overview-tags {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 
 .tag {
   padding: 0.4rem 0.9rem;
