@@ -2075,54 +2075,65 @@ html { scroll-behavior: smooth; }
   text-align: center;
 }
 
-/* ---------- iPhone / mobile (THIS is the important part) ---------- */
+/* ---------- iPhone / mobile (important part) ---------- */
 @media (max-width: 760px){
+  /* prevent sideways scroll on mobile */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
   .dp { margin-top: 28px; }
 
   .dp-card{
     padding: 14px;
     border-radius: 16px;
-     color:black;
+    color: black;
   }
 
   /* Stack story + evidence */
   .dp-card-body{
     grid-template-columns: 1fr;
-    gap: 2px;
+    gap: 10px; /* was 2px (too tight on phones) */
   }
 
-  .dp-story {
-    padding:10px;
-  }
+  .dp-story { padding: 10px; }
+
   /* Make text comfy + readable */
   .dp-story ul{
     font-size: 14.5px;
     line-height: 1.7;
     gap: 0.75rem;
+    padding-left: 18px; /* bullets look better on phone */
   }
 
-  /* Swipeable evidence row (feels native on iPhone) */
+  /* Swipeable evidence row (native iPhone feel) */
   .dp-evidence{
     flex-direction: row;
     gap: 12px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
 
-    padding: 2px 2px 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 10px;
+
+    padding: 6px 10px 10px;
+    margin: 0 -10px; /* lets cards reach edges like iOS */
     justify-self: start;
   }
 
   .dp-evidence::-webkit-scrollbar{ height: 0px; }
 
   .dp-figure{
-    min-width: 220px;            /* good iPhone card width */
+    flex: 0 0 auto;
+    min-width: 78vw;     /* safer than fixed 220px */
+    max-width: 420px;
     scroll-snap-align: start;
   }
 
   /* Prevent captions from feeling cramped */
   .dp-figure figcaption{
     font-size: 12px;
+    line-height: 1.35;
   }
 }
 
@@ -2136,26 +2147,32 @@ html { scroll-behavior: smooth; }
 
   color: black;
   text-decoration: none;
-
 }
-
-
-
-
 
 /* Smaller phones (like iPhone SE) */
 @media (max-width: 380px){
-  .dp-figure{ min-width: 200px; }
+  .dp-figure{ min-width: 82vw; } /* safer than 200px */
   .dp-head-text h3{ font-size: 16px; }
 }
 
-/*final results of project CH*/
+/* final results of project CH */
 .project-live {
-  margin: 10rem ;
-  text-align: center;
-  color:black;
-  background: rgb(227, 227, 227);
+  margin: 6rem auto;
+  padding: 2.5rem 1.25rem;
+  max-width: 1000px;
 
+  text-align: center;
+  color: black;
+  background: rgb(227, 227, 227);
+  border-radius: 18px;
+}
+
+@media (max-width: 760px){
+  .project-live{
+    margin: 3rem 1rem;   /* was 10rem (too big on phones) */
+    padding: 1.75rem 1rem;
+    border-radius: 16px;
+  }
 }
 
 .live-site-link {
@@ -2167,13 +2184,11 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid currentColor;
 }
 
-.live-site-link:hover {
-  opacity: 0.7;
-}
+.live-site-link:hover { opacity: 0.7; }
 
 .ch-hero {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* fallback */
   overflow: hidden;
   background: #fff;
 
@@ -2184,12 +2199,18 @@ html { scroll-behavior: smooth; }
   position: sticky;
   top: 0;
 
-  position: relative;   /* ✅ needed for ::after */
-  opacity: 1;           /* ✅ SHOW by default */
+  position: relative;   /* needed for ::after */
+  opacity: 1;           /* SHOW by default */
   transition: opacity 0.8s ease;
-  
 }
 
+/* iOS viewport fix (prefer svh/dvh over vh) */
+@supports (height: 100svh) {
+  .ch-hero { height: 100svh; }
+}
+@supports (height: 100dvh) {
+  .ch-hero { height: 100dvh; }
+}
 
 .ch-hero img {
   width: 100%;
@@ -2197,12 +2218,6 @@ html { scroll-behavior: smooth; }
   object-fit: contain;
   object-position: center;
   display: block;
-}
-
-
-/* mobile viewport fix */
-@supports (height: 100svh) {
-  .ch-hero { height: 100svh; }
 }
 
 /* optional fade into content */
@@ -2249,37 +2264,34 @@ html { scroll-behavior: smooth; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-indicator .arrow {
-    animation: none;
-  }
+  .scroll-indicator .arrow { animation: none; }
 }
 
-
+/* Mobile hero behavior: avoid sticky/vh weirdness */
 @media (max-width: 768px) {
   .ch-hero {
-    height: auto;           /* don’t force 100vh */
-    min-height: 80vh;       /* still feels like a hero */
+    position: relative;  /* safer than sticky on some iOS layouts */
+    height: auto;
+    min-height: 70svh;
+    padding: 18px 0;
   }
 
   .ch-hero img {
-    object-fit: contain;    /* show full image */
+    object-fit: contain;
     height: auto;
-    max-height: 80vh;
-    transform: scale(1);    /* remove zoom */
+    max-height: 70svh;
+    transform: scale(1);
   }
+
+  .scroll-indicator { bottom: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-  .ch-hero {
-    min-height: 70vh;
-  }
-
-  .ch-hero img {
-    max-height: 70vh;
-  }
+  .ch-hero { min-height: 62svh; }
+  .ch-hero img { max-height: 62svh; }
 }
 
-
+/* Toast */
 .site-toast {
   position: fixed;
   right: 1rem;
@@ -2290,7 +2302,7 @@ html { scroll-behavior: smooth; }
   padding: 14px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.92);
-  color:black;
+  color: black;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 16px 40px rgba(0,0,0,0.12);
@@ -2308,7 +2320,6 @@ html { scroll-behavior: smooth; }
   transform: translateX(0);
   opacity: 1;
 }
-
 
 .site-toast__title {
   font-weight: 700;
@@ -2331,27 +2342,24 @@ html { scroll-behavior: smooth; }
   color: #666;
 }
 
-.site-toast__close:hover {
-  opacity: 0.7;
-}
+.site-toast__close:hover { opacity: 0.7; }
 
-/* Mobile: keep it centered and higher */
+/* Mobile toast: single clean rule (removed duplicates) */
 @media (max-width: 600px) {
   .site-toast {
-    right: 50%;
-    transform: translate(50%, 120%);
+    left: 50%;
+    right: auto;
     bottom: calc(1rem + env(safe-area-inset-bottom));
+    transform: translate(-50%, 120%);
   }
+
   .site-toast.show {
-    transform: translate(50%, 0);
+    transform: translate(-50%, 0);
   }
 }
 
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .site-toast {
-    transition: none;
-  }
+  .site-toast { transition: none; }
 }
 
 .site-toast__btn {
@@ -2375,19 +2383,3 @@ html { scroll-behavior: smooth; }
   transform: translateY(-1px);
   opacity: 0.9;
 }
-
-@media (max-width: 600px) {
-  .site-toast {
-    left: 50%;
-    right: auto;
-    bottom: calc(1rem + env(safe-area-inset-bottom));
-    transform: translate(-50%, 120%);
-  }
-
-  .site-toast.show {
-    transform: translate(-50%, 0);
-  }
-}
-
-
-
