@@ -12,7 +12,6 @@
   const last = document.getElementById('last-name');
   const caret = document.getElementById('caret');
   const content = document.getElementById('content');
-  const cursor = document.querySelector('.custom-cursor');
 
   const introPlayed = sessionStorage.getItem('introPlayed');
   const hasIntro = loader && dot && content;
@@ -153,30 +152,6 @@
       if (caret) caret.style.display = 'none';
     }, speed);
   }
-
-  /* =========================
-     Smooth custom cursor
-     ========================= */
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-
-  window.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateCursor() {
-    if (!cursor) return;
-
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
 
   /* =========================
      Page transition (projects)

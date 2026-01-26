@@ -70,6 +70,8 @@
 /* =========================================================
    Base Typography & Layout
 ========================================================= */
+
+
 html {
   font-family: Arimo;
   color: var(--white-color);
@@ -261,7 +263,7 @@ header img {
   font-weight: 500;
   border-radius: 999px;
 
-  cursor: text;
+
 
   transition:
     transform 0.25s ease,
@@ -488,26 +490,6 @@ body.is-loading {
 }
 
 /* =========================================================
-   Cursor
-========================================================= */
-html, body, *{
-  cursor: url("images/white.png") 64 64, auto !important;
-}
-
-.custom-cursor {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s ease;
-  z-index: 10000;
-}
-
-
-/* =========================================================
    Typing Caret
 ========================================================= */
 #caret {
@@ -535,7 +517,7 @@ html, body, *{
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 1rem;
-  cursor: text;
+
 }
 
 /* Image */
@@ -663,7 +645,6 @@ html { scroll-behavior: smooth; }
   font-weight: 500;
   border-radius: 999px;
 
-  cursor: text;
 
   transition:
     transform 0.25s ease,
@@ -1101,7 +1082,7 @@ html { scroll-behavior: smooth; }
 
   color: white;
   text-decoration: none;     /* no underline */
-  cursor: text;
+
 
   transition:
     opacity 0.25s ease,
@@ -2347,7 +2328,6 @@ html { scroll-behavior: smooth; }
   background: transparent;
   font-size: 1.25rem;
   line-height: 1;
-  cursor: pointer;
   color: #666;
 }
 
@@ -2408,3 +2388,6 @@ html { scroll-behavior: smooth; }
     transform: translate(-50%, 0);
   }
 }
+
+
+
