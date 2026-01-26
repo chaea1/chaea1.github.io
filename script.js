@@ -284,3 +284,84 @@ if (loader) {
 
 })();
 
+
+/*china house design process */
+// design-process.js
+// Scroll reveal + active state for Option A cards
+
+(function () {
+  const cards = document.querySelectorAll(".dp-card");
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+
+  // Active card based on scroll position
+  function updateActiveCard() {
+    let active = null;
+    const midpoint = window.innerHeight * 0.45;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top <= midpoint && rect.bottom >= midpoint) {
+        active = card;
+      }
+      card.classList.remove("is-active");
+    });
+
+    if (active) active.classList.add("is-active");
+  }
+
+  window.addEventListener("scroll", updateActiveCard, { passive: true });
+  window.addEventListener("resize", updateActiveCard, { passive: true });
+
+  // init
+  updateActiveCard();
+})();
+
+/*fade in/out for CH page */
+const hero = document.getElementById("chHero");
+
+window.addEventListener("load", () => {
+  hero.style.opacity = 1;
+});
+
+window.addEventListener("scroll", () => {
+  const fadePoint = window.innerHeight;
+  hero.style.opacity = Math.max(0, 1 - window.scrollY / fadePoint);
+});
+
+/* notification */
+const toast = document.getElementById("siteToast");
+const closeBtn = document.getElementById("toastClose");
+
+// show after a short delay
+window.addEventListener("load", () => {
+  setTimeout(() => toast.classList.add("show"), 400);
+});
+
+// close
+closeBtn.addEventListener("click", () => {
+  toast.classList.remove("show");
+});
+
+const cta = document.querySelector(".site-toast__btn");
+
+cta.addEventListener("click", () => {
+  toast.classList.remove("show");
+});
+
+

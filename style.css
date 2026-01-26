@@ -25,11 +25,47 @@
 /* =========================================================
    Global Reset
 ========================================================= */
+
+@media (max-width: 768px) {
+  #content {
+    max-width: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.dot-footer {
+  width: 100%;
+  padding: 2.5rem 0 2rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  color: #999;
+  font-size: 1rem;
+
+  /* safe for iOS home bar */
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+}
+
+/* tablets and up */
+@media (min-width: 768px) {
+  .dot-footer {
+    padding: 3rem 0 2.5rem;
+    font-size: 1.2rem;
+    gap: 16px;
+  }
+}
+
 
 /* =========================================================
    Base Typography & Layout
@@ -53,6 +89,10 @@ h1, h3 {
   font-family: Inter Tight;
   font-size: 3.0rem;
   
+}
+hh3{
+  font-family: Inter Tight;
+  font-size: 2.0rem;
 }
 h2 {
     font-weight: bold;
@@ -221,7 +261,7 @@ header img {
   font-weight: 500;
   border-radius: 999px;
 
-  cursor: pointer;
+  cursor: text;
 
   transition:
     transform 0.25s ease,
@@ -450,7 +490,7 @@ body.is-loading {
 /* =========================================================
    Cursor
 ========================================================= */
-html, body, * {
+html, body, *{
   cursor: url("images/white.png") 64 64, auto !important;
 }
 
@@ -465,6 +505,7 @@ html, body, * {
   transition: transform 0.12s ease;
   z-index: 10000;
 }
+
 
 /* =========================================================
    Typing Caret
@@ -494,7 +535,7 @@ html, body, * {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 1rem;
-  cursor: pointer;
+  cursor: text;
 }
 
 /* Image */
@@ -622,7 +663,7 @@ html { scroll-behavior: smooth; }
   font-weight: 500;
   border-radius: 999px;
 
-  cursor: pointer;
+  cursor: text;
 
   transition:
     transform 0.25s ease,
@@ -743,6 +784,7 @@ html { scroll-behavior: smooth; }
   will-change: transform, opacity;
   width: 360px;
   border-radius: 12px;
+  height:300px;
 }
 .project-image {
   width: 100%;
@@ -808,6 +850,7 @@ html { scroll-behavior: smooth; }
   padding: 0.4rem 0.9rem;
   font-size: 0.85rem;
   border-radius: 999px;
+  border: 1px solid black;
   font-weight: 500;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -822,21 +865,31 @@ html { scroll-behavior: smooth; }
 .tag-accessibility {
   background: #eafaf1;
   color: #166534;
+  border: 1px solid black;
 }
 
 .tag-html {
   background: #fff1e6;
   color: #9a3412;
+    border: 1px solid black;
 }
 
 .tag-css {
   background: #eef2ff;
   color: #3730a3;
+    border: 1px solid black;
+}
+
+.footer-dark {
+  color: black;
+  padding: 1rem;
+  text-align: center;
 }
 
 .tag-js {
   background: #fef9c3;
   color: #854d0e;
+    border: 1px solid black;
 }
 
 @media (max-width: 600px) {
@@ -934,12 +987,39 @@ html { scroll-behavior: smooth; }
   margin-bottom: 1rem;
 }
 
+
+.design-process-page {
+  background: #f6f5f2;
+}
+
+.design-process-page .project-hero {
+  background: transparent;
+}
+
+.design-process-page .project-section {
+  background: transparent;
+  color: black;
+}
+.design-process-page .row2  {
+  background: transparent;
+  color: black;
+  max-width: 1200px;
+}
+.design-process-page .block {
+  background: transparent;
+  border: 2px black;
+}
+
+
 .about-block p {
   max-width: 75ch;
   line-height: 1.7;
   opacity: 0.85;
 }
 
+.ch{
+  background: transparent;
+}
 .about-list {
   list-style: none;
   padding-left: 0;
@@ -1021,7 +1101,7 @@ html { scroll-behavior: smooth; }
 
   color: white;
   text-decoration: none;     /* no underline */
-  cursor: pointer;
+  cursor: text;
 
   transition:
     opacity 0.25s ease,
@@ -1064,13 +1144,34 @@ html { scroll-behavior: smooth; }
 
 .row {
   display: flex;
-  max-width: 1000px;
+  max-width: 1200px;
   gap: 32px;  
-  margin: 0 auto;         /* space between blocks */
+  margin: 0 auto;
+  width:100%;        /* space between blocks */
+}
+
+.row2 {
+  display: flex;
+  max-width: 1600px;
+  gap: 32px;  
+  margin: 0 auto;  
+  background: rgba(0,0,0,0.35);
+         /* space between blocks */
+  border: 2px solid rgba(255,255,255,0.10);
 }
 .block {
-  
+  width: 100%;
+  max-width: 1600px;
+  gap: 25px;
   flex:1;
+  background: transparent;
+  
+}
+
+.block h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  font-size: 4.35rem;
 }
 .about-hero-row {
   display: flex;
@@ -1129,6 +1230,18 @@ html { scroll-behavior: smooth; }
 .resume-btn:hover {
   background: white;
   color: black;
+}
+
+.site-btn {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+
+  color: white;
+  text-decoration: none;
 }
 
 
@@ -1287,7 +1400,7 @@ html { scroll-behavior: smooth; }
 ========================= */
 .footer {
   padding: 1rem;
-  text-align: left;
+  text-align: center;
   color: white;
 }
 
@@ -1534,10 +1647,14 @@ html { scroll-behavior: smooth; }
 }
 
 .feature-text h2 {
-  font-size: 2.2rem;
+  font-size: 1.0rem;
   margin: 0.6rem 0 1rem;
 }
 
+.dp h2 {
+  font-size: 3.0rem;
+  margin: 0.6rem 0 1rem;
+}
 .feature-text p {
   max-width: 520px;
   font-size: 1rem;
@@ -1834,5 +1951,460 @@ html { scroll-behavior: smooth; }
 @media (max-width: 600px) {
   .site-name {
     display: none;
+  }
+}
+
+
+/* china house design process */
+/* Option A — iPhone-friendly Story + Evidence */
+
+.dp { margin-top: 40px;
+  max-width:1600px; 
+  background: #f6f4ef;
+}
+.dp-title { font-size: clamp(30px, 7vw, 56px); margin: 0 0 14px;color:black; }
+
+.dp-cards{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1600px;
+  color:black;
+}
+
+
+/* Make cards full-width + comfy padding */
+.dp-card{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  max-width:1600px;
+  border-radius: 18px;
+  padding: 14px;
+   color:black;
+}
+
+/* Header: keep it tight on phones */
+.dp-card-head{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 10px;
+  color:black;
+
+
+}
+
+.dp-step{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;     /* iOS tap size */
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  color:black;
+}
+
+.dp-head-text h3{
+  margin: 0;
+  font-size: 30px;
+  color: black;
+  line-height: 1.25;
+}
+
+.dp-sub{
+  margin: 6x 0 0;
+  font-size: 15.5px;
+  color: black;
+  line-height: 1.45;
+
+}
+
+/* Body: desktop defaults */
+.dp-card-body{
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 10px;
+  align-items: start;
+  color:black;
+  align-items: start;
+  width: 1600px;
+  padding: 10px;
+}
+
+/* divider */
+.dp-evidence{
+  padding-left: 20px;
+  border-left: 1px solid rgba(0,0,0,0.08);
+  
+}
+
+
+
+
+.dp-story ul{
+  margin-top: 0;
+  padding-left: 10px;
+  color: black;
+  line-height: 1.65;
+  font-size: 18.5px;
+  gap: 70px;
+}
+
+/* Evidence column */
+.dp-evidence{
+  display: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  justify-self: start;
+   color:black;
+   margin-top: 0;
+}
+
+.dp-figure{
+  margin: 0;
+  padding: 2px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 3px solid rgba(255,255,255,0.08);
+
+}
+
+.dp-figure img{
+  width: 100%;
+  display:block;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  margin-top: 0;
+  height:350px;
+  width:500px;
+}
+
+.dp-figure figcaption{
+  margin-top: 6px;
+  font-size: 15.5px;
+  color: black;
+  line-height: 1.35;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---------- iPhone / mobile (THIS is the important part) ---------- */
+@media (max-width: 760px){
+  .dp { margin-top: 28px; }
+
+  .dp-card{
+    padding: 14px;
+    border-radius: 16px;
+     color:black;
+  }
+
+  /* Stack story + evidence */
+  .dp-card-body{
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .dp-story {
+    padding:10px;
+  }
+  /* Make text comfy + readable */
+  .dp-story ul{
+    font-size: 14.5px;
+    line-height: 1.7;
+    gap: 0.75rem;
+  }
+
+  /* Swipeable evidence row (feels native on iPhone) */
+  .dp-evidence{
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+
+    padding: 2px 2px 8px;
+    justify-self: start;
+  }
+
+  .dp-evidence::-webkit-scrollbar{ height: 0px; }
+
+  .dp-figure{
+    min-width: 220px;            /* good iPhone card width */
+    scroll-snap-align: start;
+  }
+
+  /* Prevent captions from feeling cramped */
+  .dp-figure figcaption{
+    font-size: 12px;
+  }
+}
+
+.design-process-page .site-btn {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+
+  color: black;
+  text-decoration: none;
+
+}
+
+
+
+
+
+/* Smaller phones (like iPhone SE) */
+@media (max-width: 380px){
+  .dp-figure{ min-width: 200px; }
+  .dp-head-text h3{ font-size: 16px; }
+}
+
+/*final results of project CH*/
+.project-live {
+  margin: 10rem ;
+  text-align: center;
+  color:black;
+  background: rgb(227, 227, 227);
+
+}
+
+.live-site-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid currentColor;
+}
+
+.live-site-link:hover {
+  opacity: 0.7;
+}
+
+.ch-hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: sticky;
+  top: 0;
+
+  position: relative;   /* ✅ needed for ::after */
+  opacity: 1;           /* ✅ SHOW by default */
+  transition: opacity 0.8s ease;
+  
+}
+
+
+.ch-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+
+/* mobile viewport fix */
+@supports (height: 100svh) {
+  .ch-hero { height: 100svh; }
+}
+
+/* optional fade into content */
+.ch-hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  pointer-events: none;
+}
+
+/* optional: accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ch-hero { transition: none; }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #555;
+  opacity: 0.8;
+}
+
+.scroll-indicator .arrow {
+  margin: 0.5rem auto 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  animation: bounce 1.6s infinite;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0) rotate(45deg); opacity: 0.6; }
+  50%  { transform: translateY(8px) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(45deg); opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator .arrow {
+    animation: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .ch-hero {
+    height: auto;           /* don’t force 100vh */
+    min-height: 80vh;       /* still feels like a hero */
+  }
+
+  .ch-hero img {
+    object-fit: contain;    /* show full image */
+    height: auto;
+    max-height: 80vh;
+    transform: scale(1);    /* remove zoom */
+  }
+}
+
+@media (max-width: 480px) {
+  .ch-hero {
+    min-height: 70vh;
+  }
+
+  .ch-hero img {
+    max-height: 70vh;
+  }
+}
+
+
+.site-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 9999;
+
+  width: min(340px, calc(100vw - 2rem));
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  color:black;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+
+  display: flex;
+  gap: 12px;
+
+  /* desktop entrance */
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.site-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.site-toast__title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.site-toast__text {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.25rem;
+}
+
+.site-toast__close {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+}
+
+.site-toast__close:hover {
+  opacity: 0.7;
+}
+
+/* Mobile: keep it centered and higher */
+@media (max-width: 600px) {
+  .site-toast {
+    right: 50%;
+    transform: translate(50%, 120%);
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+  .site-toast.show {
+    transform: translate(50%, 0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .site-toast {
+    transition: none;
+  }
+}
+
+.site-toast__btn {
+  display: inline-block;
+  margin-top: 10px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: #000;
+  color: #fff;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-toast__btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .site-toast {
+    left: 50%;
+    right: auto;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    transform: translate(-50%, 120%);
+  }
+
+  .site-toast.show {
+    transform: translate(-50%, 0);
   }
 }

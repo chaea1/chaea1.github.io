@@ -101,7 +101,7 @@
     <!-- PROJECT 2 -->
     <a href="chinahousesite.html" class="project-link">
       <div class="project-card">
-        <img src="images/homepageCHW.png" alt="">
+        <img src="images/finalpage.png" alt="">
                 <div class="project-overlay">
                     <span class="project-title">ChinaHouse.Com</span>
                   </div>
@@ -111,19 +111,41 @@
   </div>
 </section>
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>© <span id="year"></span> Rebecca Law</p>
-  </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+ 
 
 
   <!-- Scripts -->
    <script src="script.js" defer></script>
 <div id="page-transition"></div>
   <div id="about-transition"></div>
+               <footer class="dot-footer">
+      <span>•</span>
+      <span>•</span>
+      <span>•</span>
+    </footer>
+
+
+          <footer class="footer">
+        <p>© <span id="year"></span> Rebecca Law</p>
+      </footer>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+
+
+      <div class="site-toast" id="siteToast" role="status" aria-live="polite">
+  <div class="site-toast__content">
+    <div class="site-toast__title">New Notificaton: </div>
+    <div class="site-toast__text">Rebecca just finished a new project.</div>
+
+      <a href="chinahousesite.html" class="site-toast__btn about-link">
+        Check it out →
+      </a>
+  </div>
+  <button class="site-toast__close" id="toastClose" aria-label="Close notification">×</button>
+</div>
+
 
 </body>
 </html>
