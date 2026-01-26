@@ -42,6 +42,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .dot-footer {
   width: 100%;
   padding: 2.5rem 0 2rem;
@@ -179,8 +180,9 @@ section {
   flex-wrap: wrap;
   gap: 2em;
   margin-top: 7rem;
-  margin-bottom: 5rem;
+  margin-bottom: 9rem;
 }
+
 
 .back-nav a {
   text-decoration: none;
@@ -361,17 +363,18 @@ s1 {
 
 
 /* title */
-.projects-title {
+.projects-title{
   max-width: 1200px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2.5rem auto; /* center + space below */
   padding: 0 1rem;
+
+  text-align: center;
 }
 
 /* grid */
-.projects-grid {
+.projects-grid{
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;        /* centers grid */
   padding: 0 1rem;
 
   display: grid;
@@ -381,6 +384,28 @@ s1 {
 
 
 
+.stackable {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  background: transparent;
+  width: 100%;
+  
+
+}
+
+@media (max-width: 768px){
+  .stackable{
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 12px;
+  
+  }
+
+  .image{
+    order: 2;
+  }
+}
 /* =========================================================
    Loader & Intro Animation
 ========================================================= */
@@ -666,6 +691,7 @@ html { scroll-behavior: smooth; }
   width: 300px;        /* match your image size */
   height: 200px;
   overflow: hidden;    /* prevents zoom spill */
+  
 }
 
 /* image fills container */
@@ -1042,7 +1068,9 @@ html { scroll-behavior: smooth; }
     border-radius: 10px;
     font-size: 0.85rem;
   }
+
 }
+
 
 
 /* Fixed bar */
@@ -1059,6 +1087,7 @@ html { scroll-behavior: smooth; }
 
   z-index: 1000;
 }
+
 
 /* Inner container */
 .top-bar-inner {
@@ -1149,20 +1178,22 @@ html { scroll-behavior: smooth; }
   
 }
 
+
 .block h2 {
   margin-top: 3rem;
   margin-bottom: 0.75rem;
   font-size: 4.35rem;
 }
 .about-hero-row {
-  display: flex;
+  display:flex;
   align-items: center;
   gap: 48px;
   position: relative;
 }
 .about-layout {
   display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
   gap: 64px;
   max-width: 1100px;
   margin: 0 auto;
@@ -1170,22 +1201,37 @@ html { scroll-behavior: smooth; }
 
 .about-text {
   flex: 1;
+
 }
 
 .about-hero-image {
-  width: 300px;
+  width: 400px;
   height: auto;
-  border-radius: 16px;
+  border-radius: 10px;
   flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .about-layout {
+    display: flex;              /* make sure flex is active */
     flex-direction: column;
+
+    width: 100%;
+    max-width: 100%;
+
+    align-items: center;        /* center children horizontally */
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    text-align: center;         /* center the text itself */
   }
 
   .about-hero-image {
-    display:none;
+    display: none;
   }
 }
 
@@ -1407,6 +1453,7 @@ html { scroll-behavior: smooth; }
   .writing-grid {
     grid-template-columns: 1fr;
   }
+  
 }
 
 .writing-grid {
@@ -1554,7 +1601,7 @@ html { scroll-behavior: smooth; }
 ========================================================= */
 .editorial-layout {
   width: 100%;
-  padding: 5rem 6vw;
+  padding: 10px;
 }
 @media (max-width: 600px) {
   .editorial-layout .container {
@@ -1570,6 +1617,7 @@ html { scroll-behavior: smooth; }
   margin-bottom: 4rem;
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 2rem;
+  display:left;
 }
 
 .editorial-title {
@@ -1760,13 +1808,15 @@ html { scroll-behavior: smooth; }
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .editorial-feature {
     grid-template-columns: 1fr;
   }
 
   .editorial-columns {
     grid-template-columns: 1fr;
+    width:100%;
+    max-width:100%;
   }
 
   .editorial-side {
@@ -1898,9 +1948,6 @@ html { scroll-behavior: smooth; }
     width: 100%;
   }
 
-  .overview-text h1 {
-    font-size: 2.6rem;
-  }
 
   /* Writing cards (horizontal scroll stays clean) */
   .writing-card {
@@ -1939,8 +1986,10 @@ html { scroll-behavior: smooth; }
 /* china house design process */
 /* Option A — iPhone-friendly Story + Evidence */
 
-.dp { margin-top: 40px;
-  max-width:1600px; 
+
+.dp { 
+  margin-top: 40px;
+ max-width: 1600px;
   background: #f6f4ef;
 }
 .dp-title { font-size: clamp(30px, 7vw, 56px); margin: 0 0 14px;color:black; }
@@ -2055,6 +2104,15 @@ html { scroll-behavior: smooth; }
   border: 3px solid rgba(255,255,255,0.08);
 
 }
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.float{
+  animation: float 3s ease-in-out infinite;
+}
 
 .dp-figure img{
   width: 100%;
@@ -2076,82 +2134,95 @@ html { scroll-behavior: smooth; }
 }
 
 /* ---------- iPhone / mobile (important part) ---------- */
-@media (max-width: 760px){
+@media (max-width: 768px){
+
   /* prevent sideways scroll on mobile */
   html, body { max-width: 100%; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
 
-  .dp { margin-top: 28px; }
+  .dp{
+    margin-top: 28px;
+    max-width: 100%;
+    width: 100%;
+  }
 
   .dp-card{
-    padding: 14px;
+    padding: 8px;          /* 2px was too tight + can cause weird wrap */
     border-radius: 16px;
     color: black;
+    max-width: 100%;
   }
 
-  /* Stack story + evidence */
+  /* Stack story + evidence: words on top, picture underneath */
   .dp-card-body{
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 10px; /* was 2px (too tight on phones) */
+    max-width: 100%;
+    width: 100%;
   }
 
-  .dp-story { padding: 10px; }
+  /* Text column */
+  .dp-story{
+    grid-column: 1/ -1;  /* key line */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
 
-  /* Make text comfy + readable */
   .dp-story ul{
-    font-size: 14.5px;
-    line-height: 1.7;
-    gap: 0.75rem;
-    padding-left: 18px; /* bullets look better on phone */
+    font-size: 16.5px;
+    line-height: 1.2;
+    width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
-  /* Swipeable evidence row (native iPhone feel) */
+
   .dp-evidence{
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 12px;
-
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
-
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 10px;
-
-    padding: 6px 10px 10px;
-    margin: 0 -10px; /* lets cards reach edges like iOS */
-    justify-self: start;
   }
 
-  .dp-evidence::-webkit-scrollbar{ height: 0px; }
+
 
   .dp-figure{
-    flex: 0 0 auto;
-    min-width: 78vw;     /* safer than fixed 220px */
-    max-width: 420px;
-    scroll-snap-align: start;
+     width: 100%;
+    max-width: 100%;
+    max-height: none;
   }
 
-  /* Prevent captions from feeling cramped */
+  .dp-figure img{
+    width: 100%;
+      height: auto;
+      display: block;
+
+  }
+
   .dp-figure figcaption{
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.35;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
-}
 
-.design-process-page .site-btn {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  .design-process-page .site-btn{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  text-transform: lowercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: lowercase;
 
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
+  }
 }
 
 /* Smaller phones (like iPhone SE) */
 @media (max-width: 380px){
-  .dp-figure{ min-width: 82vw; } /* safer than 200px */
+  .dp-figure{ max-width: 88vw; }
   .dp-head-text h3{ font-size: 16px; }
 }
 
@@ -2169,8 +2240,8 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 760px){
   .project-live{
-    margin: 3rem 1rem;   /* was 10rem (too big on phones) */
-    padding: 1.75rem 1rem;
+      /* was 10rem (too big on phones) */
+    padding: 1rem;
     border-radius: 16px;
   }
 }
@@ -2203,6 +2274,23 @@ html { scroll-behavior: smooth; }
   opacity: 1;           /* SHOW by default */
   transition: opacity 0.8s ease;
 }
+.ch-hero-dark {
+  width: 100%;
+  height: 100vh; /* fallback */
+  overflow: hidden;
+  background: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: sticky;
+  top: 0;
+
+  position: relative;   /* needed for ::after */
+  opacity: 1;           /* SHOW by default */
+  transition: opacity 0.8s ease;
+}
 
 /* iOS viewport fix (prefer svh/dvh over vh) */
 @supports (height: 100svh) {
@@ -2211,6 +2299,7 @@ html { scroll-behavior: smooth; }
 @supports (height: 100dvh) {
   .ch-hero { height: 100dvh; }
 }
+
 
 .ch-hero img {
   width: 100%;
@@ -2234,6 +2323,7 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   .ch-hero { transition: none; }
 }
+
 
 .scroll-indicator {
   position: absolute;
