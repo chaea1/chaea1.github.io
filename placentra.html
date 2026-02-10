@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="images/favi.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sense-and-Avoid Rover</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+
+<body class="design-process-page ">
+  <!-- NAV -->
+     <div class="top-bar">
+    <div class="top-bar-inner">
+      <a href="index.html" class="site-name">Rebecca Law</a>
+
+      <div class="top-buttons">
+        <a href="index.html#projects" class="top-btn">Projects</a>
+        <a href="writings.html" class="top-btn about-link">Writings</a>
+        <a href="abouts.html" class="top-btn about-link">About</a>
+        <a href="sidequests.html" class="top-btn about-link">Other</a>
+        
+      </div>
+    </div>
+  </div>
+
+     <!-- =========================
+       HERO IMAGES
+  ========================== -->
+    <section class="ch-hero-dark">
+      <img class="ch-hero-img float" src="images/placent-filler.png"alt="filler">
+      <div class="scroll-indicator">
+        <h3 class="project-title2">PlacenTra</h3>
+          
+      
+      <div class="makeathon-stats">
+        <div class="stat">
+          <div class="stat-value">48</div>
+          <div class="stat-label">Hours</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Attendees</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-value">—</div>
+          <div class="stat-label">Awards</div>
+        </div>
+      </div>
+  </div>
+    </section>
+
+  <!-- =========================
+       OVERVIEW
+  ========================== -->
+
+  <section class="project-section ">
+
+     <div class="project-status">
+      <span class="status-dot"></span>
+      <span class="status-text">Status: Finished</span>
+    </div>
+    <h2>Overview</h2>
+    <p>
+     This project explores a non-invasive, wearable concept for continuous monitoring of maternal and placental blood flow. 
+     Designed for the Biomedical Engineering Society's Make-a-thon 2026 at UIUC, the system combines optical sensing, low-power system architecture, and 
+     an intuitive user interface to address the limitations of intermittent, clinic-based monitoring. The project was
+      developed as a conceptual design supported by system schematics and interface mockups.
+ </p>
+
+      <div class="overview-tags">
+        <span class="tag tag-js">Make-a-thon</span>
+      <span class="tag tag-ui">Biomedical Engineering</span>
+      <span class="tag tag-accessibility">KiCad</span>
+      <span class="tag tag-html">Schematic Design</span>
+      <span class="tag tag-css">Medical Techology</span>
+      
+    </div>
+
+  </section>
+
+  </div>
+
+
+  <!-- =========================
+       SOLUTION
+  ========================== -->
+
+  <div class="row2">
+<section id="projects" class="stackable">
+  <section class="dp">
+    <h2>The Challenge</h2>
+    <p>Placental blood flow is typically assessed only during scheduled ultrasounds, providing limited snapshots rather 
+      than continuous insight. Changes in perfusion can occur between visits, yet existing monitoring methods are often 
+      confined to clinical settings and unsuitable for long-term, real-world use. The challenge was to design a safe, 
+      accessible approach to continuous monitoring that could support earlier detection of reduced placental perfusion.</p>
+  </section>
+
+  <!-- =========================
+       RECIPE
+  ========================== -->
+   <section class="block">
+       <img src="images/anat.png" class="project-image3 image-fade" alt="">
+       <div>
+      <p>the placenta provides nutrients & oxygen to the fetus.</p>
+
+</section>
+
+ </div>
+
+</section>
+
+  <div class="section-divider"></div>
+
+  <!-- =========================
+       DESIGN
+  ========================== -->
+<section class="dp">
+  <h2 class="dp-title">Design Process</h2>
+
+  <div class="dp-cards stackable">
+
+    <!-- 1 -->
+    <article class="dp-card ">
+      <div class="dp-card-head">
+        <span class="dp-step">01</span>
+        <div class="dp-head-text ">
+          <h3>Design Process: DCS & NIR Sensing</h3>
+        </div>
+      </div>
+
+      <div class="dp-card-body ">
+  
+        <div class="dp-story ">
+          <ul>
+            <li>Used Diffuse Correlation Spectroscopy (DCS) to directly measure blood flow by tracking fluctuations in scattered light from moving red blood cells</li>
+
+            <li>Selected near-infrared (NIR) light (750–850 nm) for safe, non-invasive tissue penetration during pregnancy</li>
+            <li>Focused on tracking Blood Flow Index (BFI) trends over time rather than single measurements for greater clinical relevance</li>
+            <li>Established a patient-specific baseline through a short resting calibration period (5–10 minutes)</li>
+            <li>Designed the system to detect relative changes in placental perfusion, enabling earlier identification of reduced blood flow</li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: evidence -->
+        <div class="dp-evidence">
+          <figure class="dp-figure">
+            <img src="images/placentra.png" alt="Website color palette">
+            <figcaption>Functionality of Proposed Belt System</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="dp-card">
+      <div class="dp-card-head">
+        <span class="dp-step">02</span>
+        <div class="dp-head-text">
+          <h3>KiCad Schematic & Belt Electronics</h3>
+
+        </div>
+      </div>
+
+      <div class="dp-card-body">
+        <div class="dp-story">
+          <ul>
+            <li>Designed a central electronics “black box” architecture (Interior Black Box Design) integrating power management, sensing, safety, and wireless communication. </li>
+
+              <li>Used an MCU with BLE (U1) to coordinate optical sensor control, data acquisition, and real-time transmission to a mobile device.</li>
+
+              <li>Integrated a dedicated optical sensing block (U4) with NIR emitters, photodiode detection, and quality-flag feedback to ensure reliable blood-flow measurements.</li>
+
+              <li>Implemented hardware safety and power management (U2, U3) to support battery operation, regulated power distribution, and safe laser activation during wear.</li>
+          </ul>
+        </div>
+
+        <div class="dp-evidence">
+          <figure class="dp-figure">
+            <img src="images/kicad-placentra.png" alt="Site map / IA sketch">
+            <figcaption>Abstract Schematic of Proposed Belt System</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="dp-card">
+      <div class="dp-card-head">
+        <span class="dp-step">03</span>
+        <div class="dp-head-text">
+          <h3>App Interface, BFI Interpretation & Alerts</h3>
+        </div>
+      </div>
+
+      <div class="dp-card-body">
+        <div class="dp-story">
+          <ul>
+
+          <li>Designed a mock-up of smartphone app to display real-time Blood Flow Index (BFI) measurements</li>
+
+          <li>Included historical trend visualization across days and weeks for clinical review</li>
+
+          <li>Generated alerts when percentage changes in BFI exceed predefined thresholds</li>
+          <li>Defined a patient-specific baseline framework using resting-state measurements to normalize continuous BFI data.</li>
+          </ul>
+        </div>
+
+        <div class="dp-evidence">
+
+          <figure class="dp-figure">
+            <img src="images/mock-up-page1.png" alt="Pricing layout detail">
+            <figcaption>Concept mobile interface showing blood flow trends & alerts.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="dp-card">
+  <div class="dp-card-head">
+    <span class="dp-step">04</span>
+    <div class="dp-head-text">
+      <h3>Power, Cost, & Sustainability</h3>
+      
+    </div>
+  </div>
+
+  <div class="dp-card-body">
+    <!-- LEFT -->
+    <div class="dp-story">
+      <ul>
+        <li>Planned duty-cycled operation, where optical sensing is activated in short, scheduled intervals rather than continuously, to reduce power consumption while preserving clinically meaningful trends.</li>
+
+        <li>Designed as a reusable belt system, with proper cleaning and replaceable sensor modules enabling use across multiple pregnancies.</li>
+
+        <li>Prioritized a modular, off-the-shelf component approach to lower manufacturing cost, reduce material waste, and improve long-term accessibility.</li>
+
+        <li>Intended use of a rechargeable battery to support daily charging and minimize disposable battery waste.</li>
+
+       
+      </ul>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="dp-evidence">
+      <figure class="dp-figure">
+        <img src="images/placet-duty.png" alt="Final FAQ page">
+        <figcaption>Duty Cycle infographic for reduced power consumption</figcaption>
+      </figure>
+    </div>
+  </div>
+</article>
+
+
+
+
+  </div>
+</section>
+
+
+<!--  RESULTS -->
+    <div class="section-divider"></div>
+  <section class="deliverables">
+  <h2>Deliverables</h2>
+  <section class="deliverable-doc">
+  <h3>Project Write-Up</h3>
+  <div class="pdf-box">
+   <iframe
+  src="documents/makeathon.pdf#toolbar=0&navpanes=0&scrollbar=0"
+  title="Project Write-Up">
+</iframe>
+  </div>
+
+  <p class="caption">
+    Comprehensive conceptual design write-up developed for PlacenTra Belt System
+  </p>
+</section>
+
+
+  <div class="deliverables-split">
+    <!-- LEFT: Video -->
+
+    <div class="video-box">
+          <h3>Final Pitch Video</h3>
+      <iframe
+        src="https://www.youtube.com/embed/tKYzXsQqz4g?si=giuaV6Hcu4t6lTmD"
+        title="BMES Make-a-thon Pitch"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+      <p class="caption">
+        Final pitch video presenting the concept, system design, and clinical motivation.
+      </p>
+    </div>
+
+    <!-- RIGHT: Scrollable Script -->
+    <div class="script-box">
+      <h3>Pitch Script</h3>
+
+      <div class="scrollbox">
+        <pre><code>
+[INTRO] -- becca
+ During pregnancy, one organ quietly supports every aspect of fetal development: it delivers oxygen and nutrients, removes waste, and adapts as the fetus grows. Do you know what it is?
+ [Slide Cue: Placenta Intro]
+ The PLACENTA!!
+[Slide Cue: Why Blood Flow Matters]
+ The placenta depends on adequate blood flow. If blood flow is reduced (AKA placental perfusion), the fetus may not receive enough oxygen. This can lead to fetal growth restriction, preterm birth, and stillbirth. It is hazardous for pregnant women with known placental blood flow complications.
+[Slide Cue: Current Clinical Practice]
+ Today, placental blood flow is assessed periodically during hospital visits. During these visits, ultrasounds provide information, but it is limited to brief snapshots taken weeks apart in controlled environments where the mother is at rest. Additionally, factors like scheduling, cost, and accessibility make it difficult to use for real-time monitoring.
+[Slide Cue: The Monitoring Gap]
+ Blood flow is also always changing due to stress, activity, and environment. Due to time gaps between visits, blood flow can decline gradually and silently without detection. Currently, there is no clinically available, noninvasive system to continuously monitor placental blood flow at home.
+[Slide Cue: Introducing Placentra]
+ Therefore, we introduce Placentra. It is a noninvasive device that enables continuous, real-world monitoring of blood flow in the placenta.
+
+[GOAL] -- ash
+ Our goal is not to replace ultrasound or make diagnoses.
+ Instead, our goal is to provide early warning signs for pregnant women with known placental blood flow complications by tracking changes in blood flow over time. This helps doctors detect gradual declines sooner and intervene early, before the fetus is affected.
+[Slide Cue: Project Goal Summary]
+
+[DEVICE OVERVIEW]
+ The device is worn around the abdomen as an adjustable belt made of materials such as nylon and bamboo-spandex. It consists of Velcro straps to accommodate changes in belly size during pregnancy.
+[Slide Cue: Sensing Method – DCS & NIR]
+ Inside the belt, light sources and sensors collect blood flow information using Diffuse Correlation Spectroscopy (DCS). It is a non-invasive method that uses low-power near-infrared light, or NIR. As reported by Dr. Junko Kakogawa, an obstetrics researcher, NIR can safely monitor placental oxygenation through the abdomen without harming the fetus or mother, and other studies confirm it can safely measure placental blood flow in real time.
+[Slide Cue: How the Sensor Works]
+ In the device, NIR laser diodes shine light into the tissue. As the light scatters based on how blood cells are moving, photodiodes detect these changes. The processing unit then analyzes this information and sends the data wirelessly.
+
+[SCHEMATICS – FEASIBILITY] -- becca
+ “To make this more concrete, this abstract schematic shows how the hardware pieces fit together inside the wearable system.”
+[Slide Cue: System Architecture Overview]
+ Microcontroller Bluetooth unit → data read from the optical sensor
+ Optical sensor (LED and photodiode) sends out and reads NIR light (purely blood flow)
+ Aux sensor is a general sensor to track skin contact, movement, skin temperature (any other detection needed other than blood flow)
+ Safety interlock lets the device know when to turn the laser on after the aux sensor detects contact and pressure to skin
+[Slide Cue: Wireless Data Flow]
+ During the detection period, the processed data is sent to a smartphone app using Bluetooth.
+
+[APP FEATURES – FEASIBILITY] -- ash
+ We utilized Figma AI to prototype the interface of the app, which manages data from the belt.
+[Slide Cue: Real-Time BFI Display]
+ On the home screen, users see their Blood Flow Index, or BFI, which is a single number that reflects how much blood is flowing through the placenta. This value comes from the DCS signals collected by the belt.
+[Slide Cue: Baseline Calibration]
+ There is no single BFI value that defines healthy or unhealthy blood flow. Instead, the app allows users to set or calibrate their personal baseline by measuring blood flow for 5 to 10 minutes while the user is at rest. All future readings are compared to this individual baseline. This flexibility accounts for natural differences between people.
+[Slide Cue: Trend Tracking & Alerts]
+ Higher BFI values indicate increased blood flow, while lower values indicate reduced flow. The app also tracks BFI trends over time. If BFI drops significantly from a user’s personal baseline, the Alerts tab notifies the user and provides an option to contact their doctor.
+
+[POWER, COST, SUSTAINABILITY] -- becca
+ How does our system uphold power, cost, and sustainability?
+[Slide Cue: Safety & Comfort]
+ Our system relies on low-power near-infrared light within established safety limits, with no needles or invasive components, ensuring safety and comfort for everyday use. The soft, adjustable belt is designed for extended wear, encouraging continued use as the body changes throughout pregnancy.
+[Slide Cue: Duty-Cycled Power Strategy]
+ Power consumption is reduced by collecting data in short, scheduled measurement windows rather than continuous illumination. This duty-cycled approach significantly reduces energy use while still capturing meaningful blood-flow trends. As a result, the device only requires once-daily recharging, similar to a smartwatch.
+[Slide Cue: Cost & Sustainability]
+ From a cost and sustainability perspective, the design relies on commercially available near-infrared components, a low-power microcontroller, and a reusable fabric belt. Originally, we thought about disposable patches, but in order to encourage sustainability, we pivoted to a fully reusable belt system. This reduces medical waste, lowers costs, and decreases long-term environmental and healthcare burden.
+
+[FUTURE WORK]  -- ash
+ While our technology is a leap forward, it faces a natural hurdle: individual body differences. Because this device relies on near-infrared light, the physical distance between the sensor and the placenta is critical.
+[Slide Cue: Placenta Position Overview]
+ We have four main places that the placenta can be located during pregnancy.
+[Slide Cue: Anterior Placenta – Best Case]
+ Anterior placenta refers to when the placenta is attached to the front wall of the uterus, offering the “gold standard” for signal quality. In this position, the light travels through minimal tissue, resulting in a high signal-to-noise ratio, leading to more accurate blood flow measurements.
+[Slide Cue: Non-Anterior Limitations]
+ However, in non-anterior positions, light must go through significantly more maternal tissue. This increases noise and weakens the captured signal, leading to less accurate results.
+[Slide Cue: Population Relevance]
+ As a result, the current design is optimized for individuals with anterior placenta placement. While that might sound like a niche group, the data suggests otherwise.
+[Slide Cue: Clinical Prevalence]
+ According to Dr. Heather Bartos of Women’s Health & Wellness, nearly one-third of pregnancies involve an anterior placenta, making this a common anatomical presentation. By focusing our initial baseline on this 33%, we are ensuring the highest level of accuracy for a very large, common demographic before expanding further.
+[Slide Cue: Future Improvements]
+ Some improvements we can predict include building on this current device to allow for reliable signals for other placenta positions by improving depth sensitivity. This introduces more anatomical personalization. Another improvement is to incorporate adaptive signal processing to reduce background noise.
+
+[CONCLUSION] -- becca
+ In conclusion, we believe early detection and timely care should be available to every patient, especially during pregnancy. By allowing placental blood flow to be monitored continuously and non-invasively outside the clinic, this system promotes early detection and gives healthcare providers better information to support healthy outcomes for both mother and child.
+
+
+.
+        </code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--MAIN LEARNINGS-->
+
+
+<section class="project-section ">
+    <h2>Reflections</h2>
+    <p>
+     Blood flow monitoring is common for stroke, diabetes, and cardiovascular care, but my team and I intentionally chose to design for a less explored yet high-impact population: pregnant patients.
+
+Working in maternal health pushed me to think beyond signal quality and focus on safety, comfort, anatomical variability, and long-term wearability. This project taught me that engineering impact is shaped as much by who you design for as the technology itself, and reinforced the importance of adapting existing tools to populations that are often overlooked.
+ </p>
+
+<p>Additionally, this project helped me grow as a teammate and communicator while working under time pressure. Technically, I learned how to use KiCad to abstract hardware systems, turning high-level ideas into structured designs. Overall, it pushed me to think outside the box and better understand the real clinical and user constraints behind the technology.
+ </p>
+
+  </section>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+    <script src="script.js" defer></script>
+      <div id="page-transition"></div>
+      <div id="about-transition"></div>
+
+       <footer class="dot-footer">
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+        </footer>
+
+
+        <footer class="footer-dark">
+        <p>© <span id="year"></span> Rebecca Law</p>
+      </footer>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+
+</body>
+</html>
